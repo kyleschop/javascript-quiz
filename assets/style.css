@@ -1,0 +1,50 @@
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(29, 255, 17);
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+a:hover {
+    color: gray;
+}
+
+header {
+    text-align: center;
+    font-weight: 900;
+    font-size: x-large;
+    padding: 20px;
+}
+
+.wrapper {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: hsl(206, 17%, 28%);
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px 30px;
+}
+
+.card {
+    text-align: center;
+    padding: 10px;
+}
+
+.btn {
+    border: none;
+    background-color: rgb(29, 255, 17);
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
