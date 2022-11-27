@@ -4,7 +4,7 @@ var startBtnDiv = document.createElement("div");
 var startBtn = document.createElement("button");
 
 
-time.textContent = "60";
+time.textContent = "00";
 card.textContent = "This is a timed quiz. Press start to begin.";
 startBtn.textContent = "START!";
 
@@ -12,3 +12,23 @@ startBtn.setAttribute("style", "width:80px; margin:20px; border:none; border-rad
 
 card.appendChild(startBtnDiv);
 startBtnDiv.appendChild(startBtn);
+
+var secondsLeft = 90;
+function startTime(){
+    var timerInterval= setInterval(function(){
+        secondsLeft--;
+        time.textContent = secondsLeft;
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    }, 1000);
+}
+function beginQuiz() {
+    startTime();
+    card.textContent = "Question 1"
+}
+
+
+startBtn.addEventListener("click", beginQuiz)
