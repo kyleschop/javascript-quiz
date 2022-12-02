@@ -62,10 +62,18 @@ function gameEnd() {
 
 function correctAnswers(){
     console.log('yes');
+    trueBtn.removeEventListener('click', correctAnswers);
+    trueBtn.removeEventListener('click', incorrectAnswers);
+    falseBtn.removeEventListener('click', correctAnswers);
+    falseBtn.removeEventListener('click', incorrectAnswers);
 };
 function incorrectAnswers(){
     console.log('no');
     secondsLeft -= 10;
+    trueBtn.removeEventListener('click', correctAnswers);
+    trueBtn.removeEventListener('click', incorrectAnswers);
+    falseBtn.removeEventListener('click', correctAnswers);
+    falseBtn.removeEventListener('click', incorrectAnswers);
 };
 
 function questionSetUp() {
