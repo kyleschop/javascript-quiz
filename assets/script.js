@@ -46,13 +46,18 @@ function startTime(){
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            sendMessage();
+            gameEnd();
         }
     }, 1000);
 };
 
-function nextQ() {
-    console.log('it worked');
+function gameEnd() {
+    var saveTime = secondsLeft;
+    saveTime;
+    secondsLeft = 1;
+    cardHeading.textContent = "Game Over";
+    cardBtn.textContent = " ";
+    cardQ.textContent = " ";
 }
 
 function correctAnswers(){
@@ -60,12 +65,12 @@ function correctAnswers(){
 };
 function incorrectAnswers(){
     console.log('no');
-    secondsLeft -= 10
+    secondsLeft -= 10;
 };
 
 function questionSetUp() {
 	cardHeading.textContent = "True or False?";
-    cardBtn.textContent = ' ';
+    cardBtn.textContent = " ";
     cardBtn.appendChild(trueBtn);
 	cardBtn.appendChild(falseBtn);
     
@@ -73,15 +78,17 @@ function questionSetUp() {
 
 function askQ7() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[6];
     trueBtn.addEventListener('click', correctAnswers);
-    trueBtn.addEventListener('click', nextQ);
+    trueBtn.addEventListener('click', gameEnd);
     falseBtn.addEventListener('click', incorrectAnswers);
-    falseBtn.addEventListener('click', nextQ);
+    falseBtn.addEventListener('click', gameEnd);
 };
 
 function askQ6() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[5];
     trueBtn.addEventListener('click', incorrectAnswers);
     trueBtn.addEventListener('click', askQ7);
@@ -91,6 +98,7 @@ function askQ6() {
 
 function askQ5() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[4];
     trueBtn.addEventListener('click', correctAnswers);
     trueBtn.addEventListener('click', askQ6);
@@ -100,6 +108,7 @@ function askQ5() {
 
 function askQ4() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[3];
     trueBtn.addEventListener('click', incorrectAnswers);
     trueBtn.addEventListener('click', askQ5);
@@ -109,6 +118,7 @@ function askQ4() {
 
 function askQ3() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[2];
     trueBtn.addEventListener('click', incorrectAnswers);
     trueBtn.addEventListener('click', askQ4);
@@ -118,6 +128,7 @@ function askQ3() {
 
 function askQ2() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[1];
     trueBtn.addEventListener('click', correctAnswers);
     trueBtn.addEventListener('click', askQ3);
@@ -127,6 +138,7 @@ function askQ2() {
 
 function askQ1() {
     var setUp = questionSetUp();
+    setUp;
     cardQ.textContent = questionsArray[0];
     trueBtn.addEventListener('click', correctAnswers);
     trueBtn.addEventListener('click', askQ2);
