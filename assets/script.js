@@ -60,6 +60,7 @@ function correctAnswers(){
 };
 function incorrectAnswers(){
     console.log('no');
+    secondsLeft -= 10
 };
 
 function questionSetUp() {
