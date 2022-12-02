@@ -1,8 +1,19 @@
+body {
+    background-image: url(./pexels-guillaume-meurice-1591447.jpg);
+    background-size: cover;
+}
+
 ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
     margin-right: 35px;
+}
+
+#timeEl {
+    background-color: rgb(29, 255, 17);
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
 }
 
 a {
@@ -26,6 +37,7 @@ header {
 
 .wrapper {
     background-color: hsl(0, 0%, 100%);
+    background-image: linear-gradient(rgb(255, 98, 0), yellow);
     border-radius: 5px;
     border-width: 1px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
