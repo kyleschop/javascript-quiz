@@ -69,11 +69,18 @@ function gameEnd() {
         saveTime: saveTime,
     };
     var optionsArr = [];
-    var storedUsers = JSON.parse(localStorage.getItem("optionsArr"));
-    optionsArr = storedUsers;
-    optionsArr = optionsArr.concat(options);
-    localStorage.setItem("optionsArr", JSON.stringify(optionsArr));
 
+    var storedUsers = JSON.parse(localStorage.getItem("optionsArr"));
+
+    if(storedUsers === null) {
+        optionsArr = optionsArr.concat(options);
+        localStorage.setItem("optionsArr", JSON.stringify(optionsArr));
+    } else {
+        optionsArr = storedUsers;
+        optionsArr = optionsArr.concat(options);
+        localStorage.setItem("optionsArr", JSON.stringify(optionsArr));
+    };
+    
 };
 
 function correctAnswers(){

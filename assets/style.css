@@ -10,6 +10,12 @@ ul {
     margin-right: 35px;
 }
 
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #timeEl {
     background-color: rgb(29, 255, 17);
     border-radius: 5px;
