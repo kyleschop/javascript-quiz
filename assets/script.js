@@ -44,6 +44,11 @@ function startTime(){
         secondsLeft--;
         time.textContent = secondsLeft;
 
+        if(secondsLeft === 91) {
+            clearInterval(timerInterval);
+            time.textContent = "00";
+        }
+
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
             gameEnd();
@@ -54,21 +59,31 @@ function startTime(){
 function gameEnd() {
     var saveTime = secondsLeft;
     saveTime;
-    secondsLeft = 1;
     cardHeading.textContent = "Game Over";
     cardBtn.textContent = " ";
-    cardQ.textContent = " ";
-}
+    cardQ.textContent = saveTime;
+    secondsLeft = 92;
+    var userIntls = prompt("Enter your initials");
+    var options = {
+        userIntls: userIntls,
+        saveTime: saveTime,
+    };
+    var optionsArr = [];
+    var storedUsers = JSON.parse(localStorage.getItem("optionsArr"));
+    optionsArr = storedUsers;
+    optionsArr = optionsArr.concat(options);
+    localStorage.setItem("optionsArr", JSON.stringify(optionsArr));
+
+};
 
 function correctAnswers(){
-    console.log('yes');
     trueBtn.removeEventListener('click', correctAnswers);
     trueBtn.removeEventListener('click', incorrectAnswers);
     falseBtn.removeEventListener('click', correctAnswers);
     falseBtn.removeEventListener('click', incorrectAnswers);
 };
+
 function incorrectAnswers(){
-    console.log('no');
     secondsLeft -= 10;
     trueBtn.removeEventListener('click', correctAnswers);
     trueBtn.removeEventListener('click', incorrectAnswers);
